@@ -33,11 +33,13 @@ It wrote the code, ran away, and now the game is unplayable.
 
 Describe your fixed game in numbered steps so a reader can follow along without watching a video:
 
-1. <!-- Describe this step -->
-2. <!-- Describe this step -->
-3. <!-- Describe this step -->
-4. <!-- Describe this step -->
-5. <!-- Add more steps as needed -->
+1. **Start the app** with `python -m streamlit run app.py`. A new game begins automatically on **Normal**: the secret is a random number from 1 to 100, and the status box shows *"Guess a number between 1 and 100. Attempts left: 8"*.
+2. **Pick a difficulty** in the sidebar. Each level sets the range and how many guesses you get: **Easy** 1–20 with 6 attempts, **Normal** 1–100 with 8, **Hard** 1–200 with 5. Changing difficulty starts a fresh game with a new secret in the new range.
+3. **Enter a guess and click "Submit Guess 🚀".** Only whole numbers inside the range are accepted. Input like `abc`, `3.7` or `500` shows an error and does **not** use up an attempt.
+4. **Follow the hint.** If your guess is too high, the hint says **"📉 Go LOWER!"**; if it's too low, **"📈 Go HIGHER!"**. Every wrong guess costs 5 points, and "Attempts left" drops by one right away. (You can turn hints off with the "Show hint" checkbox.)
+5. **Win or run out of attempts.** Guess the secret and balloons appear with your final score: 100 points for a first-try win, 10 fewer for each extra attempt (minimum 10), minus 5 for every wrong guess. For example, a win on attempt 3 scores 80 − 10 = **70**. If you use every attempt without finding it, the game ends and reveals the secret.
+6. **Click "New Game 🔁"** to play again. It resets the secret, attempts, score and guess history for the current difficulty.
+7. *(Optional)* Open **"Developer Debug Info"** to see the secret, attempts, score and history update live as you play.
 
 **Screenshot** *(optional)*: <!-- Insert a screenshot of your fixed, winning game here -->
 
